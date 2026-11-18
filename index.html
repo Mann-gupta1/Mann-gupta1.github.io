@@ -4,95 +4,298 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mann Gupta — AI Engineer</title>
-<meta name="description" content="Mann Gupta: AI Engineer, Backend & Cloud. Agentic LLM systems, RAG, multi-tenant SaaS.">
+<meta name="description" content="Mann Gupta, AI & backend engineer. Shipped an LLM agent that removed ~70% of manual replies and cut cloud spend ~70%. Agentic AI, RAG, multi-tenant SaaS, Kubernetes.">
+<meta property="og:title" content="Mann Gupta — AI Engineer">
+<meta property="og:description" content="Production agentic AI, RAG and cloud cost work with measured results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--fg:#1b1f24;--bg:#f6f7f9;--card:#fff;--mut:#5f6b7a;--ac:#2457d6;--bd:#e3e7ee;--chip:#eaf0ff}
-@media(prefers-color-scheme:dark){:root{--fg:#e8ebf0;--bg:#0f1115;--card:#171a20;--mut:#9aa5b4;--ac:#7aa7ff;--bd:#272c35;--chip:#1d2740}}
+:root{
+  --bg:#0b1020;--surface:#111933;--surface2:#16203f;--bd:#26325a;
+  --fg:#f1f5f9;--mut:#a3b0c7;--ac:#22c55e;--ac2:#38bdf8;
+  --r:14px;--s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:72px;
+}
 *{box-sizing:border-box}
-body{font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);margin:0;padding:0 16px 3rem}
-main,header,footer{max-width:820px;margin:0 auto}
-header{padding:3.5rem 0 1rem;text-align:center}
-h1{font-size:2.6rem;letter-spacing:-.02em;margin:.2rem 0}
-.tag{color:var(--mut);margin:.15rem 0}
-.tag:first-of-type{color:var(--fg);font-weight:600;font-size:1.1rem}
-nav{margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-nav a{border:1px solid var(--bd);background:var(--card);padding:.35rem .9rem;border-radius:999px;font-size:.9rem;color:var(--fg);transition:.15s}
-nav a:hover{border-color:var(--ac);color:var(--ac);text-decoration:none}
-nav a:first-child{background:var(--ac);color:#fff;border-color:var(--ac)}
-nav a:first-child:hover{color:#fff;opacity:.9}
-a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
-section{margin-top:2.2rem}
-h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin:0 0 .8rem}
-h3{margin:0;font-size:1.05rem}
-h3+.m{margin-top:.1rem}
-.m{color:var(--mut);font-size:.9rem;margin:0 0 .5rem}
-section>h3,section>.m,section>ul,section>p{background:none}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:.9rem}
-ul{padding-left:1.1rem;margin:.4rem 0 0}li{margin:.35rem 0}
-.card p{margin:.3rem 0 0}
-b{font-weight:650}
-footer{text-align:center;color:var(--mut);font-size:.85rem;margin-top:3rem}
-@media(max-width:560px){h1{font-size:2rem}}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Archivo,system-ui,sans-serif;
+  background-image:radial-gradient(900px 400px at 85% -5%,rgba(34,197,94,.12),transparent),radial-gradient(700px 400px at 0% 10%,rgba(56,189,248,.10),transparent);
+  background-repeat:no-repeat}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15;margin:0}
+a{color:var(--ac2);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--s2)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--ac);color:#04210f;padding:8px 12px;z-index:100;border-radius:8px}
+
+/* nav */
+.top{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font:700 1.05rem "Space Grotesk";color:var(--fg)}
+.logo span{color:var(--ac)}
+.top nav{display:flex;gap:4px}
+.top nav a{color:var(--mut);padding:10px 12px;font-size:.92rem;border-radius:8px}
+.top nav a:hover{color:var(--fg);background:var(--surface);text-decoration:none}
+@media(max-width:640px){.top nav a:nth-child(n+4){display:none}}
+
+/* hero */
+.hero{padding:var(--s5) 0 var(--s4)}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--bd);background:var(--surface);padding:6px 14px;border-radius:999px;font-size:.85rem;color:var(--mut)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.03em;margin:var(--s3) 0 var(--s2)}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.15rem;color:var(--mut);max-width:680px;margin:0}
+.lead b{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:var(--s3)}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;border:1px solid var(--bd);color:var(--fg);background:var(--surface);transition:transform .2s,border-color .2s,background .2s}
+.btn:hover{text-decoration:none;border-color:var(--ac2);transform:translateY(-2px)}
+.btn.p{background:var(--ac);color:#04210f;border-color:var(--ac)}
+.btn.p:hover{background:#4ade80;border-color:#4ade80}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s2);margin-top:var(--s4)}
+.stat{background:var(--surface);border:1px solid var(--bd);border-radius:var(--r);padding:var(--s3)}
+.num{font:700 2.6rem/1 "Space Grotesk";font-variant-numeric:tabular-nums;color:var(--ac)}
+.stat p{margin:8px 0 0;color:var(--mut);font-size:.92rem}
+
+/* sections */
+section{padding:var(--s4) 0}
+.eyebrow{font:600 .8rem "Space Grotesk";letter-spacing:.14em;text-transform:uppercase;color:var(--ac)}
+h2{font-size:clamp(1.7rem,3.5vw,2.3rem);margin:8px 0 var(--s3);letter-spacing:-.02em}
+
+/* timeline */
+.tl{position:relative;display:grid;gap:var(--s2)}
+.job{background:var(--surface);border:1px solid var(--bd);border-radius:var(--r);padding:var(--s3)}
+.job header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+.job h3{font-size:1.2rem}
+.job h3 small{font:500 1rem Archivo;color:var(--mut)}
+.when{color:var(--mut);font-size:.9rem;font-variant-numeric:tabular-nums}
+.job ul{margin:var(--s2) 0 0;padding-left:1.1rem}
+.job li{margin:8px 0}
+.job li b{color:var(--fg)}
+.job li{color:#cbd5e5}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s2)}
+.tag{font-size:.78rem;padding:4px 10px;border-radius:999px;background:var(--surface2);border:1px solid var(--bd);color:var(--mut)}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--s2)}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--bd);border-radius:var(--r);padding:var(--s3);transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--ac)}
+.card.big{grid-column:1/-1}
+.kpi{font:700 1.9rem/1.1 "Space Grotesk";color:var(--ac);margin-bottom:6px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{margin:0;color:#cbd5e5;font-size:.96rem;flex:1}
+.card .tags{margin-top:var(--s2)}
+.card .links{margin-top:var(--s2);font-weight:600;font-size:.92rem}
+.priv{font-size:.8rem;color:var(--mut)}
+
+/* skills */
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s2)}
+.sk div{background:var(--surface);border:1px solid var(--bd);border-radius:var(--r);padding:var(--s3)}
+.sk h3{font-size:.95rem;color:var(--ac);margin-bottom:10px}
+.sk .tags{margin:0}
+
+/* contact */
+.contact{text-align:center;background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--bd);border-radius:20px;padding:var(--s5) var(--s3);margin:var(--s4) 0}
+.contact p{color:var(--mut);max-width:520px;margin:0 auto var(--s3)}
+.contact .cta{justify-content:center}
+footer{color:var(--mut);text-align:center;font-size:.85rem;padding:var(--s3) 0 var(--s4)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease-out,transform .5s ease-out}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header>
-<h1>Mann Gupta</h1>
-<p class="tag">AI Engineer · Backend &amp; Cloud · Founding Engineer @ Acceltancy</p>
-<p class="tag">Agentic LLM systems · RAG · Multi-tenant SaaS · Kubernetes</p>
-<nav>
-<a href="assets/Mann_Gupta_CV.pdf">Download CV</a>
-<a href="mailto:manngupta923@gmail.com">Email</a>
-<a href="https://linkedin.com/in/gupta-mann">LinkedIn</a>
-<a href="https://github.com/Mann-gupta1">GitHub</a>
-<a href="https://gmannn.netlify.app">Portfolio</a>
-<a href="https://leetcode.com/m-g">LeetCode</a>
-</nav>
-</header>
-<main><section id="experience"><h2>Experience</h2><div class="card"><h3>Acceltancy — Founding Software Engineer</h3>
-<p class="m">Remote · Aug 2025 – Present</p>
-<ul>
-<li>Cut total cloud and tooling spend <b>~70%</b> by right-sizing Azure, removing idle services and consolidating vendors.</li>
-<li>Built the CRM backend from zero: <b>40+ REST controllers, 100+ services, 52 entities</b>, JWT + Google OAuth, pipeline-scoped RBAC; shipped the 124-component React frontend. Caching cut dashboard latency <b>~60%</b>.</li>
-<li>LeadLine: Meta WhatsApp/Instagram webhook pipeline with signature verification and three outbound send paths.</li>
-<li>Production agentic LLM that auto-replies to leads with a confidence-gated human escalation: first response <b>hours → seconds</b>, <b>~70%</b> fewer manual replies.</li>
-<li>Retired a standalone inbox service and its DB (<b>~40%</b> hosting saving); designed the AI inbox metering and cost model.</li>
-<li>Audited PostgreSQL row-level security and automated a reconciliation job that surfaced <b>INR 4.5 lakh</b> of misclassified records.</li>
-</ul></div><div class="card"><h3>Freelance — Software Engineer</h3>
-<p class="m">Remote · Aug 2025 – Present</p>
-<ul><li>Delivered three client products end to end (RAG platform, agentic workflow runtime, multi-tenant learning SaaS).</li></ul></div><div class="card"><h3>WorkIndia — Software Engineer (Intern)</h3>
-<p class="m">Bangalore · Feb 2025 – Jul 2025</p>
-<ul>
-<li>Led an Amazon EKS migration for <b>15+ microservices</b> with no downtime.</li>
-<li>HPA/VPA autoscaling cut monthly cloud spend <b>~50%</b>.</li>
-<li>Grafana + StatsD monitoring for 10+ services (<b>3x faster</b> triage); owned on-call for 3 weeks, resolved 100+ alerts.</li>
-</ul></div><div class="card"><h3>ITC Infotech — AI Engineer Intern</h3>
-<p class="m">Remote · Sep 2024 – Nov 2024</p>
-<ul><li>Built LLM chatbots for enterprise HR and support; response accuracy up <b>~25%</b> via prompt engineering, intent classification and retrieval.</li></ul></div><div class="card"><h3>GushWork — Software Engineer Intern</h3>
-<p class="m">Bangalore · Jun 2024 – Aug 2024</p>
-<ul><li>Reworked NLP ranking in the matching flow; keyword precision up <b>15%</b>.</li></ul></div></section><section id="about"><h2>About</h2><div class="card">
-<p>AI and backend engineer who ships <b>production AI systems end to end</b>: agentic LLM workflows, RAG retrieval platforms, distributed workflow engines and multi-tenant SaaS. Strongest in <b>Python, agentic AI and cloud infrastructure</b>.</p>
-<p>Founding engineer at Acceltancy, where I shipped a production LLM agent that removed <b>~70% of manual reply volume</b> and cut company cloud and vendor spend <b>~70%</b>. Also built a four-persona platform solo and delivered three freelance client products. Prior production work at WorkIndia and ITC Infotech.</p>
-</div></section><section id="projects"><h2>Projects</h2><div class="card"><h3><a href="https://github.com/Mann-gupta1/agentic-support-triage">Agentic Support Triage</a></h3>
-<p class="m">LangGraph · LoRA/PEFT · PyTorch · Transformers</p>
-<p>Confidence-gated LangGraph agent (classify, retrieve, draft, grade) that escalates to a human at two gates. LoRA fine-tuned Qwen2.5-0.5B as a 77-way intent router: <b>auto-answers 85.6% of traffic at 98.1% accuracy</b> vs a TF-IDF baseline's 70.6%, a 15-point automation gain that headline accuracy hides.</p></div><div class="card"><h3>Wedily</h3>
-<p class="m">Next.js 16 · React 19 · Prisma · PostgreSQL · SDXL</p>
-<p>Multi-tenant platform for four personas, built solo: Turborepo monorepo with <b>7 apps, 21 shared packages, 29-model schema, 64+ routes</b>, and an AI pre-wedding shoot generator (SDXL + IP-Adapter).</p></div><div class="card"><h3>Workable</h3>
-<p class="m">Python · Django · async workers</p>
-<p>Multi-agent DAG orchestration engine for text, image and video tasks, <b>100+ jobs/day</b>, with retries, fallbacks and persistent agent state. Cut runtime <b>~40%</b> by parallelising independent stages.</p></div><div class="card"><h3>Document Intelligence System</h3>
-<p class="m">pgvector · hybrid search · async ingestion</p>
-<p>Ingests <b>1000+ page PDFs</b>; hybrid vector + metadata search raised relevance <b>~40%</b> at <b>~35%</b> lower latency.</p></div><div class="card"><h3>EduNexus</h3>
-<p class="m">Multi-tenant learning SaaS · WebRTC</p>
-<p>RBAC across 4 user types with per-tenant isolation, <b>live classes for 50+ concurrent users</b>, AI homework grading and automated WhatsApp reports.</p></div></section><section id="skills"><h2>Skills</h2><div class="card">
-<p><b>Languages:</b> Python, TypeScript, JavaScript, SQL, Java, C++</p>
-<p><b>Backend:</b> Django, FastAPI, Node.js, Spring Boot, REST, Microservices, Prisma, WebRTC, Webhooks, Multi-tenancy, RBAC</p>
-<p><b>AI / ML:</b> Agentic AI, LangGraph, RAG, Embeddings, pgvector, Prompt Engineering, LLM Evaluation, PyTorch, Transformers, LoRA/PEFT, SDXL</p>
-<p><b>Frontend:</b> React, Next.js, Vite, Tailwind CSS, TanStack Query, Turborepo</p>
-<p><b>Cloud:</b> Azure, AWS (EKS, EC2, S3), Docker, Kubernetes, CI/CD, Prometheus, Grafana, Supabase</p>
-<p><b>Data &amp; Integrations:</b> PostgreSQL, Redis, MongoDB, Meta Graph API, WhatsApp Business API, Razorpay</p>
-</div></section><section id="education"><h2>Education</h2><div class="card"><h3>B.Tech, Information Technology — RGIPT Jais</h3>
-<p class="m">Nov 2021 – May 2025 · GPA 8.25 / 10</p>
-<ul><li>Top 4.35% on LeetCode globally (max rating 1976).</li></ul></div></section></main>
-<footer><p>© 2026 Mann Gupta · <a href="mailto:manngupta923@gmail.com">manngupta923@gmail.com</a></p></footer>
+<a class="skip" href="#work">Skip to content</a>
+<div class="top"><div class="wrap">
+  <a class="logo" href="#top">mann<span>.</span>gupta</a>
+  <nav aria-label="Sections">
+    <a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+</div></div>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <span class="pill"><span class="dot"></span> Open to AI / backend engineering roles</span>
+    <h1>I build AI systems that <em>cut cost</em> and <em>remove manual work</em>.</h1>
+    <p class="lead">AI &amp; backend engineer. Founding engineer at Acceltancy: shipped a production LLM agent that handles <b>~70% of inbound replies</b> and cut company cloud spend by <b>~70%</b>. Python, agentic AI, RAG, Kubernetes.</p>
+    <div class="cta">
+      <a class="btn p" href="assets/Mann_Gupta_CV.pdf">Download CV</a>
+      <a class="btn" href="mailto:manngupta923@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/Mann-gupta1">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/gupta-mann">LinkedIn</a>
+    </div>
+    <div class="stats" aria-label="Results">
+      <div class="stat rv"><div class="num" data-n="70" data-s="%" data-p="~">0</div><p>cloud and vendor spend cut at Acceltancy</p></div>
+      <div class="stat rv"><div class="num" data-n="70" data-s="%" data-p="~">0</div><p>manual reply volume removed by the LLM agent</p></div>
+      <div class="stat rv"><div class="num" data-n="98.1" data-s="%" data-d="1">0</div><p>accuracy on 85.6% auto-answered tickets</p></div>
+      <div class="stat rv"><div class="num" data-n="1976" data-s="">0</div><p>max LeetCode rating, top 4.35% globally</p></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="eyebrow">Experience</div>
+    <h2>Where I've shipped</h2>
+    <div class="tl">
+      <article class="job rv">
+        <header><h3>Founding Software Engineer <small>· Acceltancy</small></h3><span class="when">Aug 2025 – Present · Remote</span></header>
+        <ul>
+          <li><b>Cut total cloud and tooling spend ~70%</b> by right-sizing Azure, removing idle and duplicate services, and consolidating vendors.</li>
+          <li>Built a <b>production agentic LLM</b> that auto-replies to leads with a confidence-gated human escalation. First response went from <b>hours to seconds</b>; <b>~70% fewer manual replies</b>.</li>
+          <li>Built the CRM backend from zero: <b>40+ REST controllers, 100+ services, 52 entities</b>, JWT + Google OAuth, pipeline-scoped RBAC. Caching cut dashboard latency <b>~60%</b>.</li>
+          <li>Shipped the <b>124-component React frontend</b> and a Meta WhatsApp/Instagram webhook pipeline with signature verification.</li>
+          <li>Retired a standalone inbox service and its database (<b>~40% hosting saving</b>). Audited Postgres row-level security and automated a reconciliation job that surfaced <b>INR 4.5 lakh</b> of misclassified records.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LLM agents</span><span class="tag">Azure</span><span class="tag">PostgreSQL</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Prisma</span></div>
+      </article>
+      <article class="job rv">
+        <header><h3>Software Engineer, Freelance <small>· 3 client products</small></h3><span class="when">Aug 2025 – Present · Remote</span></header>
+        <ul>
+          <li><b>RAG platform:</b> ingests <b>1000+ page PDFs</b>; hybrid vector + metadata search lifted relevance <b>~40%</b> at <b>~35% lower latency</b>.</li>
+          <li><b>Agent workflow runtime:</b> multi-agent DAG engine, <b>100+ jobs/day</b>, retries and fallbacks; parallel stages cut runtime <b>~40%</b>.</li>
+          <li><b>Learning SaaS:</b> RBAC across 4 user types with tenant isolation, <b>live classes for 50+ concurrent users</b> over WebRTC.</li>
+        </ul>
+        <div class="tags"><span class="tag">Django</span><span class="tag">pgvector</span><span class="tag">WebRTC</span><span class="tag">async workers</span></div>
+      </article>
+      <article class="job rv">
+        <header><h3>Software Engineer Intern <small>· WorkIndia</small></h3><span class="when">Feb – Jul 2025 · Bangalore</span></header>
+        <ul>
+          <li>Led an <b>Amazon EKS migration</b> for <b>15+ microservices</b> with zero downtime.</li>
+          <li>HPA/VPA autoscaling cut monthly cloud spend <b>~50%</b>. Grafana + StatsD gave <b>3x faster</b> incident triage; owned on-call and resolved 100+ alerts.</li>
+        </ul>
+        <div class="tags"><span class="tag">Kubernetes</span><span class="tag">AWS EKS</span><span class="tag">Grafana</span></div>
+      </article>
+      <article class="job rv">
+        <header><h3>AI Engineer Intern <small>· ITC Infotech</small></h3><span class="when">Sep – Nov 2024 · Remote</span></header>
+        <ul><li>Built LLM chatbots for enterprise HR and support; response accuracy up <b>~25%</b> via prompt engineering, intent classification and retrieval.</li></ul>
+      </article>
+      <article class="job rv">
+        <header><h3>Software Engineer Intern <small>· GushWork</small></h3><span class="when">Jun – Aug 2024 · Bangalore</span></header>
+        <ul><li>Reworked NLP ranking in the matching flow; keyword precision up <b>15%</b>.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="eyebrow">Projects</div>
+    <h2>Things I built</h2>
+    <div class="grid">
+      <article class="card big rv">
+        <div class="kpi">85.6% auto-answered at 98.1% accuracy</div>
+        <h3>Agentic Support Triage</h3>
+        <p>Confidence-gated LangGraph agent (classify, retrieve, draft, grade) that escalates to a human at two gates. LoRA fine-tuned Qwen2.5-0.5B as a 77-way intent router. Beats a TF-IDF baseline's 70.6% auto-answer rate: a 15-point automation gain that headline accuracy (+1.8pp) hides.</p>
+        <div class="tags"><span class="tag">LangGraph</span><span class="tag">LoRA / PEFT</span><span class="tag">PyTorch</span><span class="tag">Selective prediction</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/agentic-support-triage">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">7 apps · 21 packages · 64+ routes</div>
+        <h3>Wedily</h3>
+        <p>Multi-tenant platform for four personas, built solo. 29-model Postgres schema and an AI pre-wedding shoot generator (SDXL + IP-Adapter).</p>
+        <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Prisma</span><span class="tag">Turborepo</span></div>
+        <div class="links priv">Private, commercial codebase</div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">Multi-modal RAG</div>
+        <h3>Apex-RAG</h3>
+        <p>Retrieval over text, images, video and audio. Hybrid retrieval, cross-encoder reranking and RAGAS evaluation.</p>
+        <div class="tags"><span class="tag">RAG</span><span class="tag">Reranking</span><span class="tag">RAGAS</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/Apex-RAG">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">Fine-tune to serve</div>
+        <h3>Foundry</h3>
+        <p>LLM fine-tuning and MLOps platform: data prep, training, eval, serving and infra. Runs end to end on a free Colab T4.</p>
+        <div class="tags"><span class="tag">LLM fine-tuning</span><span class="tag">MLOps</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/foundry">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">Proactive WhatsApp</div>
+        <h3>Vera Bot</h3>
+        <p>Merchant assistant that composes proactive WhatsApp messages across five business verticals. Built for the magicpin AI Challenge.</p>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">WhatsApp</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/vera-bot">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">Visual LLM pipelines</div>
+        <h3>Next Flow</h3>
+        <p>Visual DAG builder for LLM pipelines. React Flow canvas, Gemini nodes, Trigger.dev execution.</p>
+        <div class="tags"><span class="tag">React Flow</span><span class="tag">Gemini</span><span class="tag">Trigger.dev</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/next-flow">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">Cost from metrics</div>
+        <h3>KubeWise</h3>
+        <p>Reads Prometheus metrics, finds idle capacity, estimates AWS cost and suggests autoscaling changes.</p>
+        <div class="tags"><span class="tag">Prometheus</span><span class="tag">AWS</span><span class="tag">Kubernetes</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/KubeWise">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">Agent observability</div>
+        <h3>AegisTrace</h3>
+        <p>Tracing and eval for multi-step agent pipelines. FastAPI, Postgres, pgvector.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">pgvector</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/AegisTrace">View on GitHub →</a></div>
+      </article>
+      <article class="card rv">
+        <div class="kpi">3D + live commerce</div>
+        <h3>Ring Store</h3>
+        <p>3D engagement ring configurator on a headless WooCommerce backend. React Three Fiber, custom gem shaders, live cart.</p>
+        <div class="tags"><span class="tag">React Three Fiber</span><span class="tag">WooCommerce</span></div>
+        <div class="links"><a href="https://github.com/Mann-gupta1/ring-store">View on GitHub →</a></div>
+      </article>
+    </div>
+    <p style="margin-top:var(--s3)"><a href="https://github.com/Mann-gupta1?tab=repositories">All repositories on GitHub →</a></p>
+  </section>
+
+  <section id="skills">
+    <div class="eyebrow">Skills</div>
+    <h2>Stack</h2>
+    <div class="sk">
+      <div class="rv"><h3>AI / LLM</h3><div class="tags"><span class="tag">Agentic AI</span><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">pgvector</span><span class="tag">Prompt engineering</span><span class="tag">LLM evaluation</span><span class="tag">LoRA / PEFT</span><span class="tag">PyTorch</span><span class="tag">Transformers</span></div></div>
+      <div class="rv"><h3>Backend</h3><div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">Spring Boot</span><span class="tag">REST</span><span class="tag">WebRTC</span><span class="tag">Webhooks</span><span class="tag">RBAC</span><span class="tag">Multi-tenancy</span></div></div>
+      <div class="rv"><h3>Cloud &amp; infra</h3><div class="tags"><span class="tag">Azure</span><span class="tag">AWS EKS / EC2 / S3</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">CI/CD</span><span class="tag">Prometheus</span><span class="tag">Grafana</span></div></div>
+      <div class="rv"><h3>Frontend &amp; data</h3><div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">MongoDB</span><span class="tag">SQL</span></div></div>
+    </div>
+    <p class="lead" style="margin-top:var(--s3);font-size:1rem"><b>Education:</b> B.Tech Information Technology, RGIPT Jais · 2021–2025 · GPA 8.25 / 10</p>
+  </section>
+
+  <div class="contact rv" id="contact">
+    <h2>Let's build something that moves a metric</h2>
+    <p>Looking for AI engineering and backend roles. I reply fast.</p>
+    <div class="cta">
+      <a class="btn p" href="mailto:manngupta923@gmail.com">manngupta923@gmail.com</a>
+      <a class="btn" href="assets/Mann_Gupta_CV.pdf">Download CV</a>
+      <a class="btn" href="https://linkedin.com/in/gupta-mann">LinkedIn</a>
+    </div>
+  </div>
+</div>
+</main>
+<footer>© 2026 Mann Gupta</footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(el,v){var d=+el.dataset.d||0;el.textContent=(el.dataset.p||'')+v.toFixed(d)+(el.dataset.s||'')}
+  function count(el){
+    var n=+el.dataset.n;
+    if(reduce){fmt(el,n);return}
+    var t0=performance.now(),dur=1200;
+    (function step(t){var k=Math.min((t-t0)/dur,1);fmt(el,n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)})(t0);
+  }
+  document.querySelectorAll('.num').forEach(function(e){fmt(e,+e.dataset.n)}); // no-JS/observer fallback
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){
+    if(!x.isIntersecting)return;
+    x.target.classList.add('in');
+    var n=x.target.querySelector('.num');if(n)count(n);
+    io.unobserve(x.target);
+  })},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
