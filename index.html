@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mann Gupta — AI Engineer</title>
+<meta name="description" content="Mann Gupta: AI Engineer, Backend & Cloud. Agentic LLM systems, RAG, multi-tenant SaaS.">
+<style>
+:root{--fg:#222;--bg:#fafafa;--mut:#666;--ac:#1a5fb4}
+@media(prefers-color-scheme:dark){:root{--fg:#e6e6e6;--bg:#141414;--mut:#999;--ac:#6ea8fe}}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);max-width:800px;margin:0 auto;padding:2rem 1rem;line-height:1.6}
+header{text-align:center}
+h1{margin:.2rem 0}
+.tag{color:var(--mut);margin:.1rem 0;font-size:.95rem}
+nav a{margin:0 .5rem}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+section{margin-top:2.5rem}
+h2{border-bottom:2px solid var(--ac);padding-bottom:.25rem;font-size:1.4rem}
+h3{margin:1.2rem 0 .1rem;font-size:1.05rem}
+.m{color:var(--mut);font-size:.9rem;margin:0 0 .4rem}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+footer{margin-top:3rem;text-align:center;color:var(--mut);font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+<h1>Mann Gupta</h1>
+<p class="tag">AI Engineer · Backend &amp; Cloud · Founding Engineer @ Acceltancy</p>
+<p class="tag">Agentic LLM systems · RAG · Multi-tenant SaaS · Kubernetes</p>
+<nav>
+<a href="assets/Mann_Gupta_CV.pdf">Download CV</a>
+<a href="mailto:manngupta923@gmail.com">Email</a>
+<a href="https://linkedin.com/in/gupta-mann">LinkedIn</a>
+<a href="https://github.com/Mann-gupta1">GitHub</a>
+<a href="https://gmannn.netlify.app">Portfolio</a>
+<a href="https://leetcode.com/m-g">LeetCode</a>
+</nav>
+</header>
+
+<section id="about"><h2>About</h2>
+<p>AI and backend engineer who ships <b>production AI systems end to end</b>: agentic LLM workflows, RAG retrieval platforms, distributed workflow engines and multi-tenant SaaS. Strongest in <b>Python, agentic AI and cloud infrastructure</b>.</p>
+<p>Founding engineer at Acceltancy, where I shipped a production LLM agent that removed <b>~70% of manual reply volume</b> and cut company cloud and vendor spend <b>~70%</b>. Also built a four-persona platform solo and delivered three freelance client products. Prior production work at WorkIndia and ITC Infotech.</p>
+</section>
+
+<section id="projects"><h2>Projects</h2>
+<h3><a href="https://github.com/Mann-gupta1/agentic-support-triage">Agentic Support Triage</a></h3>
+<p class="m">LangGraph · LoRA/PEFT · PyTorch · Transformers</p>
+<p>Confidence-gated LangGraph agent (classify, retrieve, draft, grade) that escalates to a human at two gates. LoRA fine-tuned Qwen2.5-0.5B as a 77-way intent router: <b>auto-answers 85.6% of traffic at 98.1% accuracy</b> vs a TF-IDF baseline's 70.6%, a 15-point automation gain that headline accuracy hides.</p>
+<h3>Wedily</h3>
+<p class="m">Next.js 16 · React 19 · Prisma · PostgreSQL · SDXL</p>
+<p>Multi-tenant platform for four personas, built solo: Turborepo monorepo with <b>7 apps, 21 shared packages, 29-model schema, 64+ routes</b>, and an AI pre-wedding shoot generator (SDXL + IP-Adapter).</p>
+<h3>Workable</h3>
+<p class="m">Python · Django · async workers</p>
+<p>Multi-agent DAG orchestration engine for text, image and video tasks, <b>100+ jobs/day</b>, with retries, fallbacks and persistent agent state. Cut runtime <b>~40%</b> by parallelising independent stages.</p>
+<h3>Document Intelligence System</h3>
+<p class="m">pgvector · hybrid search · async ingestion</p>
+<p>Ingests <b>1000+ page PDFs</b>; hybrid vector + metadata search raised relevance <b>~40%</b> at <b>~35%</b> lower latency.</p>
+<h3>EduNexus</h3>
+<p class="m">Multi-tenant learning SaaS · WebRTC</p>
+<p>RBAC across 4 user types with per-tenant isolation, <b>live classes for 50+ concurrent users</b>, AI homework grading and automated WhatsApp reports.</p>
+</section>
+
+<section id="experience"><h2>Experience</h2>
+<h3>Acceltancy — Founding Software Engineer</h3>
+<p class="m">Remote · Aug 2025 – Present</p>
+<ul>
+<li>Cut total cloud and tooling spend <b>~70%</b> by right-sizing Azure, removing idle services and consolidating vendors.</li>
+<li>Built the CRM backend from zero: <b>40+ REST controllers, 100+ services, 52 entities</b>, JWT + Google OAuth, pipeline-scoped RBAC; shipped the 124-component React frontend. Caching cut dashboard latency <b>~60%</b>.</li>
+<li>LeadLine: Meta WhatsApp/Instagram webhook pipeline with signature verification and three outbound send paths.</li>
+<li>Production agentic LLM that auto-replies to leads with a confidence-gated human escalation: first response <b>hours → seconds</b>, <b>~70%</b> fewer manual replies.</li>
+<li>Retired a standalone inbox service and its DB (<b>~40%</b> hosting saving); designed the AI inbox metering and cost model.</li>
+<li>Audited PostgreSQL row-level security and automated a reconciliation job that surfaced <b>INR 4.5 lakh</b> of misclassified records.</li>
+</ul>
+<h3>Freelance — Software Engineer</h3>
+<p class="m">Remote · Aug 2025 – Present</p>
+<ul><li>Delivered three client products end to end (RAG platform, agentic workflow runtime, multi-tenant learning SaaS).</li></ul>
+<h3>WorkIndia — Software Engineer (Intern)</h3>
+<p class="m">Bangalore · Feb 2025 – Jul 2025</p>
+<ul>
+<li>Led an Amazon EKS migration for <b>15+ microservices</b> with no downtime.</li>
+<li>HPA/VPA autoscaling cut monthly cloud spend <b>~50%</b>.</li>
+<li>Grafana + StatsD monitoring for 10+ services (<b>3x faster</b> triage); owned on-call for 3 weeks, resolved 100+ alerts.</li>
+</ul>
+<h3>ITC Infotech — AI Engineer Intern</h3>
+<p class="m">Remote · Sep 2024 – Nov 2024</p>
+<ul><li>Built LLM chatbots for enterprise HR and support; response accuracy up <b>~25%</b> via prompt engineering, intent classification and retrieval.</li></ul>
+<h3>GushWork — Software Engineer Intern</h3>
+<p class="m">Bangalore · Jun 2024 – Aug 2024</p>
+<ul><li>Reworked NLP ranking in the matching flow; keyword precision up <b>15%</b>.</li></ul>
+</section>
+
+<section id="skills"><h2>Skills</h2>
+<p><b>Languages:</b> Python, TypeScript, JavaScript, SQL, Java, C++</p>
+<p><b>Backend:</b> Django, FastAPI, Node.js, Spring Boot, REST, Microservices, Prisma, WebRTC, Webhooks, Multi-tenancy, RBAC</p>
+<p><b>AI / ML:</b> Agentic AI, LangGraph, RAG, Embeddings, pgvector, Prompt Engineering, LLM Evaluation, PyTorch, Transformers, LoRA/PEFT, SDXL</p>
+<p><b>Frontend:</b> React, Next.js, Vite, Tailwind CSS, TanStack Query, Turborepo</p>
+<p><b>Cloud:</b> Azure, AWS (EKS, EC2, S3), Docker, Kubernetes, CI/CD, Prometheus, Grafana, Supabase</p>
+<p><b>Data &amp; Integrations:</b> PostgreSQL, Redis, MongoDB, Meta Graph API, WhatsApp Business API, Razorpay</p>
+</section>
+
+<section id="education"><h2>Education</h2>
+<h3>B.Tech, Information Technology — RGIPT Jais</h3>
+<p class="m">Nov 2021 – May 2025 · GPA 8.25 / 10</p>
+<ul><li>Top 4.35% on LeetCode globally (max rating 1976).</li></ul>
+</section>
+
+<footer><p>© 2026 Mann Gupta · <a href="mailto:manngupta923@gmail.com">manngupta923@gmail.com</a></p></footer>
+</body>
+</html>
