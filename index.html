@@ -164,10 +164,11 @@
 <main>
 
   <div class="hero">
+    <div class="mono" aria-hidden="true">MG</div>
     <div>
       <h1>Mann Gupta</h1>
-      <p class="tagline">AI Engineer · Founding Engineer @ Acceltancy<br>
-      Agentic LLM systems · RAG · Multi-tenant SaaS · Kubernetes</p>
+      <p class="tagline">AI &amp; Backend Engineer · Founding Product Owner &amp; Engineer @ Acceltancy<br>
+      Agentic LLM systems · RAG · Multi-tenant SaaS · Cloud cost · Kubernetes</p>
       <div class="links">
         <a class="primary" href="assets/Mann_Gupta_CV.pdf" target="_blank" rel="noopener">Download CV</a>
         <a href="mailto:manngupta923@gmail.com">manngupta923@gmail.com</a>
@@ -183,26 +184,28 @@
     <div class="entry">
       <div class="when">Aug 2025 – Present</div>
       <div class="what">
-        <h3>Acceltancy — Founding Software Engineer</h3>
+        <h3>Acceltancy — Founding Product Owner &amp; Engineer</h3>
         <p class="where">Remote</p>
         <ul>
-          <li><strong>Cut total company cloud and tooling spend ~70%</strong> by right-sizing Azure, removing idle and duplicate services, and consolidating vendors.</li>
-          <li>Built a <strong>production agentic LLM</strong> that auto-replies to inbound leads with a confidence-gated human escalation: first response went from hours to seconds and <strong>~70% of manual replies</strong> were removed.</li>
-          <li>Built the CRM backend from zero: <strong>40+ REST controllers, 100+ services, 52 entities</strong>, JWT + Google OAuth, pipeline-scoped RBAC. Caching cut dashboard latency <strong>~60%</strong>.</li>
-          <li>Shipped the <strong>124-component React frontend</strong> and a Meta WhatsApp/Instagram webhook pipeline with signature verification and three outbound send paths.</li>
-          <li>Retired a standalone inbox service and its database (<strong>~40% hosting saving</strong>); audited PostgreSQL row-level security and automated a reconciliation job that surfaced <strong>INR 4.5 lakh</strong> of misclassified records.</li>
+          <li>Built a <strong>production agentic LLM</strong> that auto-replies to inbound leads, using CRM context, tool calls and confidence-gated human handoff: first reply went from hours to seconds and <strong>~70% of manual replies</strong> are no longer needed.</li>
+          <li>Cut total company cloud and tooling spend by <strong>~70%</strong> by right-sizing Azure, removing idle services and consolidating vendors.</li>
+          <li>Built the CRM backend from zero: <strong>40+ REST controllers, 100+ services, 52 entities</strong>, JWT + Google OAuth, pipeline-scoped RBAC. An in-memory cache cut dashboard latency <strong>~60%</strong>.</li>
+          <li>Built the <strong>Meta WhatsApp and Instagram webhook pipeline</strong> for LeadLine, with signature verification and outbound delivery through the Graph API.</li>
+          <li>Merged a standalone Next.js inbox into the backend, retiring one service and its database and cutting hosting cost <strong>~40%</strong>.</li>
+          <li>Built <strong>Wedily</strong>, a multi-tenant wedding platform for four user types, as the only engineer: <strong>7 apps, 21 shared packages, 29-model PostgreSQL schema</strong>.</li>
+          <li>Built <strong>ShutterLab</strong>, an AI photo gallery app that wedding vendors use to deliver photos to their own clients.</li>
+          <li>Audited PostgreSQL row-level security and automated a reconciliation job that found <strong>INR 4.5 lakh</strong> in misclassified records.</li>
         </ul>
       </div>
     </div>
     <div class="entry">
       <div class="when">Aug 2025 – Present</div>
       <div class="what">
-        <h3>Freelance — Software Engineer</h3>
-        <p class="where">Remote · three client products delivered end to end</p>
+        <h3>Freelance — Software Engineer, independent clients</h3>
+        <p class="where">Remote</p>
         <ul>
-          <li><strong>RAG platform:</strong> ingests 1000+ page PDFs; hybrid vector + metadata search lifted relevance <strong>~40%</strong> at <strong>~35% lower latency</strong>.</li>
-          <li><strong>Agent workflow runtime:</strong> multi-agent DAG engine running <strong>100+ jobs/day</strong> with retries and fallbacks; parallel stages cut runtime <strong>~40%</strong>.</li>
-          <li><strong>Learning SaaS:</strong> RBAC across 4 user types with tenant isolation and <strong>live classes for 50+ concurrent users</strong> over WebRTC.</li>
+          <li><strong>Document search (RAG):</strong> semantic chunking for 1000+ page PDFs and hybrid vector + metadata search; relevance about <strong>40%</strong> better than keyword search.</li>
+          <li><strong>Workable:</strong> multi-agent DAG engine for text, image and video jobs with retries and persistent state. Also delivered EduNexus, a multi-tenant learning app with <strong>live WebRTC classes for 50+ users</strong>.</li>
         </ul>
       </div>
     </div>
@@ -212,9 +215,9 @@
         <h3>WorkIndia — Software Engineer (Intern)</h3>
         <p class="where">Bangalore, India</p>
         <ul>
-          <li>Led an <strong>Amazon EKS migration</strong> for <strong>15+ microservices</strong> with no downtime.</li>
-          <li>Kubernetes HPA/VPA autoscaling cut monthly cloud spend <strong>~50%</strong>.</li>
-          <li>Grafana + StatsD monitoring for 10+ services (<strong>3x faster</strong> incident triage); owned on-call for 3 weeks and resolved 100+ alerts.</li>
+          <li>Executed the migration of an <strong>Amazon EKS cluster for 15+ microservices</strong> with the platform team, with no downtime.</li>
+          <li>Tuned Kubernetes HPA and VPA autoscaling, which cut monthly cloud spend <strong>~50%</strong>.</li>
+          <li>Set up Grafana and StatsD monitoring for 10+ services (<strong>3x faster</strong> incident triage); covered on-call for 3 weeks and wrote the runbooks the team adopted.</li>
         </ul>
       </div>
     </div>
@@ -238,13 +241,23 @@
 
   <section class="about">
     <h2>About</h2>
-    <p>I'm an AI and backend engineer who ships <strong>production AI systems end to end</strong>: agentic LLM workflows, RAG retrieval platforms, distributed workflow engines and multi-tenant SaaS. I'm strongest in <strong>Python, agentic AI and cloud infrastructure</strong>.</p>
-    <p>As founding engineer at <strong>Acceltancy</strong> I shipped an LLM agent that removed <strong>~70% of manual reply volume</strong> and cut company cloud and vendor spend by <strong>~70%</strong>. I've also built a four-persona platform solo and delivered <strong>three freelance client products</strong> end to end.</p>
-    <p>Earlier I ran production workloads at <strong>WorkIndia</strong> (EKS migration, 15+ microservices) and built LLM chatbots at <strong>ITC Infotech</strong>. B.Tech in IT from <strong>RGIPT Jais</strong>, and in the <strong>top 4.35% on LeetCode</strong> globally (max rating 1976).</p>
+    <p>I'm an AI and backend engineer who ships <strong>production systems end to end</strong>: agentic LLM workflows, RAG platforms, multi-tenant SaaS and cloud cost work. I'm strongest in <strong>Python, agentic AI and cloud infrastructure</strong>.</p>
+    <p>At <strong>Acceltancy</strong> I built a production LLM agent that handles <strong>~70% of manual reply volume</strong>, cut company cloud spend by <strong>~70%</strong>, built the CRM backend and Wedily, and shipped ShutterLab. I also deliver <strong>client products</strong> end to end, including wedding websites and a RAG platform.</p>
+    <p>Earlier: <strong>WorkIndia</strong> (EKS migration for 15+ microservices) and <strong>ITC Infotech</strong> (LLM chatbots). B.Tech in IT from <strong>RGIPT Jais</strong>; <strong>top 4.35% on LeetCode</strong> globally.</p>
   </section>
 
   <section>
     <h2>Projects</h2>
+    <div class="project">
+      <h3>ShutterLab</h3>
+      <p class="meta">AI photo gallery · Acceltancy</p>
+      <p>AI photo gallery app for wedding photographers and vendors. Vendors deliver finished galleries to their own clients through a shareable link. Pitched and built from scratch.</p>
+    </div>
+    <div class="project">
+      <h3>Wedding invitation &amp; portfolio websites</h3>
+      <p class="meta">Custom client builds</p>
+      <p>Custom wedding invitation and portfolio websites, built to each client's brief and shipped from requirements to launch.</p>
+    </div>
     <div class="project">
       <h3>Agentic Support Triage<span class="badge">Featured</span></h3>
       <p class="meta">LangGraph · LoRA/PEFT · PyTorch · <a href="https://github.com/Mann-gupta1/agentic-support-triage" target="_blank" rel="noopener">GitHub</a></p>
